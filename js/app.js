@@ -1,17 +1,7 @@
-/**
- * @license MIT
- * @copyright amit712singhal 2024 All rights reserved
- * @author amit712singhal <rakshit.singhal@gmail.com>
- */
-
 "use strict";
 
 import { fetchData, url } from "./api.js";
 import * as module from "./module.js";
-
-document.addEventListener( 'DOMContentLoaded', () =>
-{
-
 
 function setWeatherBackground(condition) {
   const body = document.body;
@@ -33,6 +23,8 @@ function setWeatherBackground(condition) {
   body.style.backgroundRepeat = 'no-repeat';
 }
 
+document.addEventListener( 'DOMContentLoaded', () =>
+{
   const errorSection = document.querySelector( '[data-error-content]' );
 
   if ( window.matchMedia( '(hover: none) and (pointer: coarse)' ).matches )
