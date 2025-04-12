@@ -11,6 +11,28 @@ import * as module from "./module.js";
 
 document.addEventListener( 'DOMContentLoaded', () =>
 {
+
+
+function setWeatherBackground(condition) {
+  const body = document.body;
+  const backgroundMap = {
+    Clear: 'https://images.unsplash.com/photo-1501973801540-537f08ccae7e',
+    Clouds: 'https://images.unsplash.com/photo-1529676468690-25c3c37b18d2',
+    Haze: 'https://images.unsplash.com/photo-1534081333815-ae5019106621',
+    Rain: 'https://images.unsplash.com/photo-1509622902803-8e7ef71d639e',
+    Snow: 'https://images.unsplash.com/photo-1608889175112-7a1e2f2b76e0',
+    Thunderstorm: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d',
+    Mist: 'https://images.unsplash.com/photo-1602081109531-61c065a728a1'
+  };
+
+  const url = backgroundMap[condition] || backgroundMap['Clear'];
+  body.style.transition = 'background-image 1s ease-in-out';
+  body.style.backgroundImage = `url('${url}')`;
+  body.style.backgroundSize = 'cover';
+  body.style.backgroundPosition = 'center';
+  body.style.backgroundRepeat = 'no-repeat';
+}
+
   const errorSection = document.querySelector( '[data-error-content]' );
 
   if ( window.matchMedia( '(hover: none) and (pointer: coarse)' ).matches )
@@ -202,6 +224,7 @@ export const updateWeather = function ( lat, lon )
 
   fetchData( url.currentWeather( lat, lon ), function ( currentWeather )
   {
+  setWeatherBackground(currentWeather.weather[0].main);
     const {
       weather,
       dt: dateUnix,
