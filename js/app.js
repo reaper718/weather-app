@@ -7,7 +7,7 @@ function setWeatherBackground(condition) {
   const body = document.body;
   const backgroundMap = {
     Clear: 'https://images.unsplash.com/photo-1501973801540-537f08ccae7e',
-    Clouds: 'https://images.unsplash.com/photo-1529676468690-25c3c37b18d2',
+    "Few Clouds": 'https://images.unsplash.com/photo-1529676468690-25c3c37b18d2',
     Haze: 'https://images.unsplash.com/photo-1534081333815-ae5019106621',
     Rain: 'https://images.unsplash.com/photo-1509622902803-8e7ef71d639e',
     Snow: 'https://images.unsplash.com/photo-1608889175112-7a1e2f2b76e0',
