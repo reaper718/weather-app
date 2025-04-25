@@ -216,7 +216,7 @@ export const updateWeather = function ( lat, lon )
 
   fetchData( url.currentWeather( lat, lon ), function ( currentWeather )
   {
-  setWeatherBackground(currentWeather.weather[0].main);
+  //setWeatherBackground(currentWeather.weather[0].main);
     const {
       weather,
       dt: dateUnix,
